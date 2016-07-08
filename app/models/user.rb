@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   validates :username, presence: true
+  validates :email, presence: true
+
   has_secure_password
 
   # Returns the hash digest of the given string.
