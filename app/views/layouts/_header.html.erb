@@ -9,7 +9,7 @@
             <li><%= link_to 'HELP', help_path %></li>
             <% if logged_in? %>
                 <li><%= link_to 'NOTIFICATIONS', '#' %></li>
-                <li><%= link_to 'LOGOUT', '#' %></li>
+                <li><%= link_to 'LOGOUT', logout_path, method: :delete %></li>
             <% end %>
         </ul>
     </div>
