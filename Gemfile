@@ -7,6 +7,9 @@ gem 'rails', '~> 5.0.0'
 #Style with foundation
 gem 'foundation-rails'
 
+# To test using methods such as 'assert_template'
+gem 'rails-controller-testing'
+#
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
