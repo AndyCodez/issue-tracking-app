@@ -10,4 +10,9 @@ module SessionsHelper
   def current_user
     @current_user ||= User.find_by(id: session[:user_id])
   end
+
+  #User is logged in if current_user is not nil (Returns true if user is logged in)
+  def logged_in?
+    !current_user.nil?
+  end
 end
