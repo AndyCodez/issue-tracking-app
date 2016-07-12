@@ -26,6 +26,7 @@ module SessionsHelper
 
   #Logs out current user
   def log_out
+    forget(current_user)
     session.delete(:user_id)
     @current_user = nil
   end
@@ -37,5 +38,13 @@ module SessionsHelper
     user.remember
     cookies.signed[:user_id] = user.id
     cookies[:remember_token] = { value: user.remember_token, expires: 7.days.from_now }
+  end
+
+  #Forgets a persistent session
+  def forget(user)
+    #calls the forget method in user.rb
+    user.forget
+    cookies.delete(:user_id)
+    cookies.delete(:remember_token)
   end
 end
