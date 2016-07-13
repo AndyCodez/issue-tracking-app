@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       UserMailer.account_activation(@user).deliver_now
+      #note to self: change flash to info and blue later 
       flash[:success] = "We've sent you an activation link. Please check your email."
       redirect_to root_url
       
