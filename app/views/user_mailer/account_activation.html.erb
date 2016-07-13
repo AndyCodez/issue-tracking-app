@@ -1,0 +1,6 @@
+<h2>Hello, <%= @user.username %> </h2>
+
+<h3>Welcome to Issue Tracker!</h3>
+<p>To activate your account, please click on the link below:</p>
+<%= link_to "Activate your account", edit_account_activation_url(@user.activation_token, 
+                                                                 email: @user.email) %>
