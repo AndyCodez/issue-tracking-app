@@ -9,7 +9,7 @@ User.create!(username: "Example User",
             email: "user@example.org",
             password: "foobar",
             password_confirmation: "foobar",
-            activated: true,
+            activated: false,
             activated_at: Time.zone.now)
 
 4.times do |n|

@@ -47,4 +47,12 @@ module SessionsHelper
     cookies.delete(:user_id)
     cookies.delete(:remember_token)
   end
+
+  #Returns the period length between signup and the current time
+  def time_from_signup(user)
+    now = Time.zone.now
+    signup_time = user.created_at
+    now - signup_time
+  end
+
 end
