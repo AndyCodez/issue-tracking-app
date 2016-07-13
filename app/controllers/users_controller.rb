@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       UserMailer.account_activation(@user).deliver_now
       flash[:success] = "We've sent you an activation link. Please check your email."
-      redirect_to @user
+      redirect_to root_url
       
     else
       render 'new'
