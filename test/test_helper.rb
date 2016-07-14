@@ -19,7 +19,7 @@ class ActiveSupport::TestCase
     if integration_test?
       #Login by posting to the sessions path
       post login_path, params: {
-              session:{ username: @user.username, 
+              session:{ username: user.username, 
                                 password: password,
                                 remember_me: remember_me
                       }
@@ -28,6 +28,11 @@ class ActiveSupport::TestCase
       #Login using the session
       session[:user_id] - user.id
     end
+  end
+
+  #Returns a random time upto now
+  def time_rand from = 0.0, to = Time.now
+          Time.at(from + rand * (to.to_f - from.to_f))
   end
 
   private
