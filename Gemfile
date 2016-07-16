@@ -12,8 +12,6 @@ gem 'foundation-rails'
 # To test using methods such as 'assert_template'
 gem 'rails-controller-testing'
 #
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -51,7 +49,12 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  #Use sqlite3 as db for Active Record
+  gem 'sqlite3'
 end
 
+group :test, :production do
+    gem 'pg'
+end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
