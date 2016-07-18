@@ -68,12 +68,12 @@ class User < ApplicationRecord
 
   #Returns true if a password reset has expired
   def password_reset_expired?
-    reset_sent_at < 7.days.ago
+    reset_sent_at < 2.hours.ago
   end
 
   #Returns true if an activation token has expired
   def activation_token_expired?
-    activation_sent_at < 1.minute.ago
+    activation_sent_at < 7.days.ago
   end
 
   private
