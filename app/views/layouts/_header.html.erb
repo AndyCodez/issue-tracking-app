@@ -8,6 +8,7 @@
             <li><%= link_to 'ABOUT', about_path %></li>
             <li><%= link_to 'HELP', help_path %></li>
             <% if logged_in? %>
+                <li><%= link_to 'RENEW ACTIVATION LINK', new_account_activation_path(@current_user) %></li>
                 <li><%= link_to 'NOTIFICATIONS', '#' %></li>
                 <li><%= link_to 'LOGOUT', logout_path, method: :delete %></li>
             <% end %>

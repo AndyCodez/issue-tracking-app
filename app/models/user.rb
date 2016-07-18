@@ -76,6 +76,12 @@ class User < ApplicationRecord
     activation_sent_at < 7.days.ago
   end
 
+  #Creates and assigns the activation token and digest
+  def create_activation_digest
+    self.activation_token = User.new_token
+    self.activation_digest = User.digest(activation_token)
+  end
+
   private
     
   # Converts email to all lower-case.
@@ -83,11 +89,6 @@ class User < ApplicationRecord
     self.email = email.downcase
   end
 
-  #Creates and assigns the activation token and digest
-  def create_activation_digest
-    self.activation_token = User.new_token
-    self.activation_digest = User.digest(activation_token)
-  end
 
   def self.time_rand from = 0.0, to = Time.now
       Time.at(from + rand * (to.to_f - from.to_f))
