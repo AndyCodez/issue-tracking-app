@@ -45,7 +45,7 @@ class User < ApplicationRecord
   #Activates an account
   def activate
     update_attribute(:activated, true)
-    update_attribute(:activated, Time.zone.now)
+    update_attribute(:activated_at, Time.zone.now)
   end
 
   #Sends activation email and records the time it was sent
@@ -68,12 +68,12 @@ class User < ApplicationRecord
 
   #Returns true if a password reset has expired
   def password_reset_expired?
-    reset_sent_at < 2.hours.ago
+    reset_sent_at < 7.days.ago
   end
 
   #Returns true if an activation token has expired
   def activation_token_expired?
-    activation_sent_at < 7.days.ago
+    activation_sent_at < 1.minute.ago
   end
 
   private

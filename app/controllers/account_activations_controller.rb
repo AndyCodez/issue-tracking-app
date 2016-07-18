@@ -1,5 +1,5 @@
 class AccountActivationsController < ApplicationController
-  before_action :check_expiration
+  before_action :check_expiration, only: [:edit]
 
   def edit
     user = User.find_by(email: params[:email])

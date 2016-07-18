@@ -4,6 +4,7 @@ makatunga:
     password_digest: <%= User.digest('password') %>
     activated: true
     activated_at: <%= Time.zone.now %>
+    activation_sent_at: <%= Time.zone.now %>
 
 archer:
     username: Sterling Archer
@@ -11,6 +12,7 @@ archer:
     password_digest: <%= User.digest('password') %>
     activated: true
     activated_at: <%= Time.zone.now %>
+    activation_sent_at: <%= Time.zone.now %>
 
 bradhe:
     username: Cess
@@ -19,6 +21,7 @@ bradhe:
     created_at: <%= 2.days.ago %>
     activated: false
     activated_at: <%= Time.zone.now %>
+    activation_sent_at: <%= Time.zone.now %>
 
 gee:
     username: Getty
@@ -26,4 +29,4 @@ gee:
     password_digest: <%= User.digest('password') %>
     created_at: <%= (1.day + 0.hours + 59.minutes).ago %>
     activated: false
-    activated_at: <%= Time.zone.now %>       
+    activation_sent_at: <%= Time.zone.now %>       
