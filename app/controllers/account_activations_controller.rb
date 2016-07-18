@@ -1,4 +1,5 @@
 class AccountActivationsController < ApplicationController
+  before_action :check_expiration
 
   def edit
     user = User.find_by(email: params[:email])
@@ -12,4 +13,13 @@ class AccountActivationsController < ApplicationController
       redirect_to root_url
     end
   end
+
+  #Checks expiration of activation token
+  private
+    def check_expiration
+      if user.activation_token_expired?
+        flash[:alert] = "Sorry, your activation link has expired."
+        redirect_to root_url
+      end
+    end
 end
