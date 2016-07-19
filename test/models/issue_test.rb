@@ -4,8 +4,7 @@ class IssueTest < ActiveSupport::TestCase
 
   def setup
     @user = users(:makatunga)
-    #not idiomatically correct
-    @issue = Issue.new( description: "Lorem ipsum dolor sit amet, consectetur adipiscin.", user_id: @user.id)
+    @issue = @user.issues.build( description: "Lorem ipsum dolor sit amet, consectetur adipiscin.", user_id: @user.id)
   end
 
   test "should be valid" do
