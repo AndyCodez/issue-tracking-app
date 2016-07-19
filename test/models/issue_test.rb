@@ -29,4 +29,9 @@ class IssueTest < ActiveSupport::TestCase
   test "order should be most recent first" do
     assert_equal Issue.first, issues(:most_recent)
   end
+
+  test "priority should be present" do
+    @issue.priority = " "
+    assert_not @issue.valid?
+  end
 end

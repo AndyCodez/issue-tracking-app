@@ -1,5 +1,10 @@
 <%= form_for(@issue) do |f| %>
+
     <%= f.label :issue_description %>
     <%= f.text_area :description %>
+
+    <%= f.label :priority %>
+    <%= f.text_field :priority %>
+
     <%= f.submit %>
 <% end %>
