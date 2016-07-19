@@ -83,6 +83,8 @@ class User < ApplicationRecord
     self.activation_digest = User.digest(activation_token)
   end
 
+
+  
   private
     
   # Converts email to all lower-case.

@@ -55,4 +55,8 @@ module SessionsHelper
     now - signup_time
   end
 
+  def send_issue_raised_email
+    UserMailer.issue_raised(current_user).deliver_now
+  end
+
 end

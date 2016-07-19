@@ -7,6 +7,7 @@ class IssuesController < ApplicationController
   def create
     @issue = current_user.issues.build(issue_params)
     if @issue.save
+      send_issue_raised_email
       flash[:success] = "Your issue has been recorded."
       redirect_to current_user
     else

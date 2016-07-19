@@ -19,4 +19,10 @@ class UserMailer < ApplicationMailer
     @user = user
     mail to: user.email, subject: "Password Reset"
   end
+
+  def issue_raised(user)
+    #The user that raised the issue
+    @user = user
+    mail to: 'admin@issuetrackerproject.com', subject: "Issue Raised"
+  end
 end
