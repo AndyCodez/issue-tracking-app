@@ -6,5 +6,6 @@ class CreateIssues < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+    add_index :issues, [:user_id, :created_at]
   end
 end
