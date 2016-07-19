@@ -5,10 +5,10 @@ class IssuesController < ApplicationController
   end
 
   def create
-    @issue = Issue.new(issue_params)
+    @issue = current_user.issues.build(issue_params)
     if @issue.save
       flash[:success] = "Your issue has been recorded."
-      redirect_to root_url
+      redirect_to current_user
     else
       flash.now[:alert] = "There was a problem submitting your issue."
       render 'new'
