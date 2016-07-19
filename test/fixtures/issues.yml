@@ -1,9 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  description: MyText
-  user: one
+shida:
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat."
+    created_at: <%= 7.minutes.ago %>
+matatizo:
+    description: "Matatizo kweli. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat."
+    created_at: <%= 3.days.ago %>
 
-two:
-  description: MyText
-  user: two
+taabu:
+    description: "Na taabu jeh? Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat."
+    created_at: <%= 2.years.ago %>
+
+most_recent:
+    description: "This is the most recent. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat."
+    created_at: <%= Time.zone.now %>

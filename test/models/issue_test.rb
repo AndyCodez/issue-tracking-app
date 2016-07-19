@@ -25,4 +25,8 @@ class IssueTest < ActiveSupport::TestCase
     @issue.description = "a"*49
     assert_not @issue.valid?
   end
+
+  test "order should be most recent first" do
+    assert_equal Issue.first, issues(:most_recent)
+  end
 end
