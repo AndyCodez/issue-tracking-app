@@ -15,4 +15,11 @@ class UserMailerPreview < ActionMailer::Preview
     UserMailer.password_reset(user)
   end
 
+
+  # Preview this email at http://localhost:3000/rails/mailers/user_mailer/issue_raised
+  def issue_raised
+    user = User.last
+    UserMailer.issue_raised(user)
+  end
+
 end
