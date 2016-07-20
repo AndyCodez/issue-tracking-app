@@ -12,8 +12,13 @@
                 <% if !@current_user.activated? %>
                     <li><%= link_to 'RENEW ACTIVATION LINK', new_account_activation_path(@current_user) %></li>
                 <% end %>
-                <li><%= link_to 'RAISE ISSUE', new_issue_path %></li>
-                <li><%= link_to 'NOTIFICATIONS', '#' %></li>
+
+                <% if @current_user.admin? %>
+                    <li><%= link_to 'ISSUES', '#' %></li>
+                <% else %>
+                        <li><%= link_to 'RAISE ISSUE', new_issue_path %></li>
+                <% end %>
+                <li><%= link_to 'PROFILE', current_user %></li>
                 <li><%= link_to 'LOGOUT', logout_path, method: :delete %></li>
             <% end %>
         </ul>
