@@ -1,4 +1,6 @@
 class IssuesController < ApplicationController
+  before_action :admin_user, only: [:change_status_to_in_progress, :change_status_to_resolved, 
+                                    :change_status_to_closed]
 
   def new
     @issue = Issue.new
@@ -45,6 +47,10 @@ class IssuesController < ApplicationController
   end
 
   private
+
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
+  end
     def issue_params
       params.require(:issue).permit(:title, :description, :priority)
     end
