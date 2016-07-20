@@ -14,7 +14,7 @@
                 <% end %>
 
                 <% if @current_user.admin? %>
-                    <li><%= link_to 'ISSUES', '#' %></li>
+                    <li><%= link_to 'ISSUES', issues_path %></li>
                 <% else %>
                         <li><%= link_to 'RAISE ISSUE', new_issue_path %></li>
                 <% end %>

@@ -1,9 +1,14 @@
-<li>
-    <span class="issue_title"><%= link_to issue.title, show_issue_path(id: issue.id) %></span><br/>
-    <span class="priority"> <p> Priority: <%= issue.priority %> </p></span>
-    <span class="timestamp">    
-        <h6> Posted on <%= issue.created_at %></h6>
-    </span>
+    <% if current_user.admin? %>
 
-    <!--<span class="button"> <%= link_to "My Button" %></span>-->
-</li>
+        <% @issues.each do |each_issue| %>
+            <li><%= each_issue.title %></li>
+        <% end %>
+    <% else %>
+        <li>
+            <span class="issue_title"><%= link_to issue.title, show_issue_path(id: issue.id) %></span><br/>
+            <span class="priority"> <p> Priority: <%= issue.priority %> </p></span>
+            <span class="timestamp">    
+                <h6> Posted on <%= issue.created_at %></h6>
+            </span>
+        </li>
+    <% end %>

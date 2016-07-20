@@ -21,6 +21,7 @@ class IssuesController < ApplicationController
   end
 
   def index
+    @issues = Issue.all
   end
 
   private
