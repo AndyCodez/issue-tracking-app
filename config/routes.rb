@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
   get 'show_issue' => 'issues#show'
+  get 'mark_in_progress' => 'issues#change_status_to_in_progress'
 
   resources :users
   resources :account_activations, only: [:new, :edit, :create]

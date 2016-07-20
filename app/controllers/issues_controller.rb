@@ -25,6 +25,13 @@ class IssuesController < ApplicationController
     @issues = Issue.all
   end
 
+
+  def change_status_to_in_progress
+    issue = Issue.find_by(id: params[:id])
+    issue.update_attribute(:status, "inprogress")
+    redirect_to issues_path
+  end
+
   private
     def issue_params
       params.require(:issue).permit(:title, :description, :priority)

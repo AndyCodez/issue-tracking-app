@@ -11,7 +11,7 @@
         <tr>
             <td><%= link_to each_issue.title, show_issue_path(id: each_issue.id)  %></td>
             <td><%= each_issue.priority %></td>
-            <td class="button open"><%= each_issue.status %></td>
+            <td><%= each_issue.status %></td>
         </tr>
     <% end %>
 
