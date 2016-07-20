@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
   get 'show_issue' => 'issues#show'
   get 'mark_in_progress' => 'issues#change_status_to_in_progress'
+  get 'mark_resolved' => 'issues#change_status_to_resolved'
+  get 'mark_closed' => 'issues#change_status_to_closed'
 
   resources :users
   resources :account_activations, only: [:new, :edit, :create]

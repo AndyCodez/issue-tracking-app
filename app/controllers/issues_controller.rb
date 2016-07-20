@@ -31,6 +31,18 @@ class IssuesController < ApplicationController
     issue.update_attribute(:status, "inprogress")
     redirect_to issues_path
   end
+  
+  def change_status_to_resolved
+    issue = Issue.find_by(id: params[:id])
+    issue.update_attribute(:status, "resolved")
+    redirect_to issues_path
+  end
+
+  def change_status_to_closed
+    issue = Issue.find_by(id: params[:id])
+    issue.update_attribute(:status, "closed")
+    redirect_to issues_path
+  end
 
   private
     def issue_params
