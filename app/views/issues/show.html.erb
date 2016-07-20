@@ -1,2 +1,3 @@
-<h1>Issues#show</h1>
-<p>Find me in app/views/issues/show.html.erb</p>
+<h2><%= @issue.title %></h2>
+<h6>Posted <%= time_ago_in_words(@issue.created_at) %> ago.</h6>
+<p><%= @issue.description %></p>

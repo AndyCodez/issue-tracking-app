@@ -17,6 +17,7 @@ class IssuesController < ApplicationController
   end
 
   def show
+    @issue = current_user.issues.find_by(id: params[:id])
   end
 
   def index
