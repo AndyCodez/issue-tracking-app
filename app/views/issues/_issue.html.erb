@@ -4,12 +4,14 @@
         <thead>
             <th>Issue Title</th>
             <th>Priority</th>
+            <th>Status</th>
         </thead>
         <tbody>
     <% @issues.each do |each_issue| %>
         <tr>
             <td><%= link_to each_issue.title, show_issue_path(id: each_issue.id)  %></td>
             <td><%= each_issue.priority %></td>
+            <td class="button open"><%= each_issue.status %></td>
         </tr>
     <% end %>
 
