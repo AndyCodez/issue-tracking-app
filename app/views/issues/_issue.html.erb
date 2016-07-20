@@ -1,7 +1,7 @@
     <% if current_user.admin? %>
 
         <% @issues.each do |each_issue| %>
-            <li><%= each_issue.title %></li>
+            <li><%= link_to each_issue.title, show_issue_path(id: each_issue.id)  %></li>
         <% end %>
     <% else %>
         <li>

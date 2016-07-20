@@ -1,3 +1,12 @@
+<% if current_user.admin? %>
+
+    <h2> <%= @issue_admin.title %></h2>
+<h6>Posted <%= time_ago_in_words(@issue_admin.created_at) %> ago.</h6>
+<p><%= @issue_admin.description %></p>
+
+<% else%>
+
 <h2><%= @issue.title %></h2>
 <h6>Posted <%= time_ago_in_words(@issue.created_at) %> ago.</h6>
 <p><%= @issue.description %></p>
+<% end %>

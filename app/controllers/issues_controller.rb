@@ -18,6 +18,7 @@ class IssuesController < ApplicationController
 
   def show
     @issue = current_user.issues.find_by(id: params[:id])
+    @issue_admin = Issue.find_by(id: params[:id])
   end
 
   def index
