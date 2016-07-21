@@ -22,7 +22,13 @@
         <%= f.submit "Submit Comment" %>
     <% end %>
 
-    <%# <p>Recorded Comment(s): <%= @issue_admin.comment %1> </p> %>
+    <br/>
+    <p>
+        Recorded Comment(s):
+        <% @comments.each do |comment| %>
+            <p><%= comment.content %></p>
+        <% end %>
+    </p>
 
 <% else%>
 
