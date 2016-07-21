@@ -15,10 +15,20 @@
     </p>
     <p><%= @issue_admin.description %></p>
 
+    <%= form_for(@issue_admin) do |f| %>
+        <%= f.label :comment %>
+        <%= f.text_area :comment %>
+
+        <%= f.submit "Submit Comment" %>
+    <% end %>
+
 <% else%>
 
     <h2><%= @issue.title %></h2>
     <h4>Status: <%= @issue_admin.status %> </h4>
     <p>Posted <%= time_ago_in_words(@issue.created_at) %> ago.</p>
     <p><%= @issue.description %></p>
+
+    <h3>Admin Comments</h3>
+    <p><%= @issue.comment %></p>
 <% end %>
