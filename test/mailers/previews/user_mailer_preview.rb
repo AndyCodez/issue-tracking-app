@@ -32,4 +32,9 @@ class UserMailerPreview < ActionMailer::Preview
     UserMailer.issue_resolved(user)
   end
 
+  def issue_closed
+    user = User.last
+    UserMailer.issue_closed(user)
+  end
+
 end

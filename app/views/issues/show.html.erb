@@ -10,7 +10,7 @@
         <%= link_to "Resolved Issue", mark_resolved_path(id: @issue_admin.id, user_id: @issue_admin.user_id) %> |
     </span>
     <span class="closed">
-        <%= link_to "Close Issue", mark_closed_path(id: @issue_admin.id) %>
+        <%= link_to "Close Issue", mark_closed_path(id: @issue_admin.id, user_id: @issue_admin.user_id) %>
     </span>
     </p>
     <p><%= @issue_admin.description %></p>

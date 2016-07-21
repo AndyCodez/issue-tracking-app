@@ -52,8 +52,11 @@ class IssuesController < ApplicationController
   end
 
   def change_status_to_closed
+    user = User.find_by(id: params[:user_id])
+    user.send_issue_closed_email
     issue = Issue.find_by(id: params[:id])
     issue.update_attribute(:status, "closed")
+    flash[:success] = "Issue status changed to closed!"
     redirect_to issues_path
   end
 
