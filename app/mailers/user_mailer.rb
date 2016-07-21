@@ -20,6 +20,11 @@ class UserMailer < ApplicationMailer
     mail to: user.email, subject: "Password Reset"
   end
 
+  def issue_opened(user)
+    @user = user
+    mail to: user.email, subject: "Issue Reopened"
+  end
+
   def issue_assigned(user)
     @user = user
     mail to: user.email, subject: "Issue Assigned"

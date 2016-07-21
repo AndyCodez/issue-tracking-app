@@ -83,6 +83,10 @@ class User < ApplicationRecord
     self.activation_digest = User.digest(activation_token)
   end
 
+  def send_issue_open_email
+    UserMailer.issue_opened(self).deliver_now
+  end
+
   def send_issue_assigned_email
     UserMailer.issue_assigned(self).deliver_now
   end

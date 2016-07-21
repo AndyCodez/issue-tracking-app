@@ -32,6 +32,15 @@ class IssuesController < ApplicationController
     @issues = Issue.all
   end
 
+  def change_status_to_open
+    user = User.find_by(id: params[:user_id])
+    user.send_issue_open_email
+    issue = Issue.find_by(id: params[:id])
+    issue.update_attribute(:status, "open")
+    flash[:success] = "Issue status changed to open!"
+    redirect_to issues_path
+  end
+
   #Executes when issue is assigned
   def change_status_to_in_progress
     user = User.find_by(id: params[:user_id])
@@ -42,6 +51,7 @@ class IssuesController < ApplicationController
     redirect_to issues_path
   end
 
+  #Executes when issue is resolved
   def change_status_to_resolved
     user = User.find_by(id: params[:user_id])
     user.send_issue_resolved_email
@@ -51,6 +61,7 @@ class IssuesController < ApplicationController
     redirect_to issues_path
   end
 
+  #Executes when issue is closed
   def change_status_to_closed
     user = User.find_by(id: params[:user_id])
     user.send_issue_closed_email
