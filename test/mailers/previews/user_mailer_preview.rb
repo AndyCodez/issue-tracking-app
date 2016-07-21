@@ -3,14 +3,14 @@ class UserMailerPreview < ActionMailer::Preview
 
   # Preview this email at http://localhost:3000/rails/mailers/user_mailer/account_activation
   def account_activation
-    user = User.first
+    user = User.last
     user.activation_token = User.new_token
     UserMailer.account_activation(user)
   end
 
   # Preview this email at http://localhost:3000/rails/mailers/user_mailer/password_reset
   def password_reset
-    user = User.first
+    user = User.last
     user.reset_token = User.new_token
     UserMailer.password_reset(user)
   end
@@ -20,6 +20,11 @@ class UserMailerPreview < ActionMailer::Preview
   def issue_raised
     user = User.last
     UserMailer.issue_raised(user)
+  end
+
+  def issue_assigned
+    user = User.last
+    UserMailer.issue_assigned(user)
   end
 
 end

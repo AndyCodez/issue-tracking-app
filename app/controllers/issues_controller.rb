@@ -32,9 +32,13 @@ class IssuesController < ApplicationController
     @issues = Issue.all
   end
 
+  #Executes when issue is assigned
   def change_status_to_in_progress
+    user = User.find_by(id: params[:user_id])
+    user.send_issue_assigned_email
     issue = Issue.find_by(id: params[:id])
     issue.update_attribute(:status, "inprogress")
+    flash[:success] = "Issue changed to in progress!"
     redirect_to issues_path
   end
 

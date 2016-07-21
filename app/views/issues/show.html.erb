@@ -4,7 +4,7 @@
     <h4>Status: <%= @issue_admin.status %> </h4>
     <p>Posted <%= time_ago_in_words(@issue_admin.created_at) %> ago.
     <span class="assign">
-        <%= link_to "Assign Issue", mark_in_progress_path(id: @issue_admin.id) %> |
+        <%= link_to "Assign Issue", mark_in_progress_path(id: @issue_admin.id, user_id: @issue_admin.user_id) %> |
     </span>
     <span class="resolved">
         <%= link_to "Resolved Issue", mark_resolved_path(id: @issue_admin.id) %> |
