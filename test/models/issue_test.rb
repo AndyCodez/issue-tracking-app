@@ -4,7 +4,7 @@ class IssueTest < ActiveSupport::TestCase
 
   def setup
     @user = users(:makatunga)
-    @issue = @user.issues.build( description: "Lorem ipsum dolor sit amet, consectetur adipiscin.", user_id: @user.id)
+    @issue = @user.issues.build( description: "Lorem ipsum dolor sit amet, consectetur adipiscin.", user_id: @user.id, title: "Lorem Ipsum", priority: "low", status: "open")
   end
 
   test "should be valid" do
