@@ -98,6 +98,10 @@ class User < ApplicationRecord
   def send_issue_closed_email
     UserMailer.issue_closed(self).deliver_now
   end
+
+  def send_comment_made_email
+    UserMailer.comment_made(self).deliver_now
+  end
   
   private
     

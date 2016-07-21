@@ -4,6 +4,8 @@ class CommentsController < ApplicationController
     @issue = Issue.find_by(id: params[:id])
     @comment = @issue.comments.build(comment_params)
     if @comment.save
+      user = User.find_by(id: params[:user_id])
+      user.send_comment_made_email
       flash[:success] = "Comment has been added!"
       redirect_back fallback_location: root_url
     else

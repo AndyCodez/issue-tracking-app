@@ -42,4 +42,9 @@ class UserMailerPreview < ActionMailer::Preview
     UserMailer.issue_closed(user)
   end
 
+  def comment_made
+    user = User.last
+    UserMailer.comment_made(user)
+  end
+
 end

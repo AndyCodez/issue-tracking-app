@@ -22,7 +22,7 @@
     </p>
     <p><%= @issue_admin.description %></p>
 
-    <%= form_for(@comment, url: comments_path(id: @issue_admin.id)) do |f| %>
+    <%= form_for(@comment, url: comments_path(id: @issue_admin.id, user_id: @issue_admin.user_id)) do |f| %>
         <%= f.label :comment %>
         <%= f.text_area :content %>
 

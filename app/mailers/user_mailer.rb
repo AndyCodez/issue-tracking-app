@@ -40,6 +40,11 @@ class UserMailer < ApplicationMailer
     mail to: user.email, subject: "Issue Closed"
   end
 
+  def comment_made(user)
+    @user = user
+    mail to: user.email, subject: "Admin Comment" 
+  end
+
   def issue_raised(user)
     #The user that raised the issue
     @user = user
