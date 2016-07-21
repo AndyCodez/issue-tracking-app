@@ -22,6 +22,7 @@ class IssuesController < ApplicationController
     @issue = current_user.issues.find_by(id: params[:id])
     #The issue in the admin's view
     @issue_admin = Issue.find_by(id: params[:id])
+    #To help build the comment form 
     @comment = Comment.new
   end
 
