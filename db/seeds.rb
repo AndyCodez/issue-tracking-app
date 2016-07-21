@@ -17,10 +17,17 @@ User.create!(username: "Example User",
   name = Faker::Name.name
   email = "user-#{n+1}@railstutorial.org"
   password = "password"
-  User.create!(username: name,
-              email: email,
-              password: password,
-              password_confirmation: password,
-              activated: true,
-              activated_at: Time.zone.now)
+  user = User.create!(username: name,
+                        email: email,
+                        password: password,
+                        password_confirmation: password,
+                        activated: true,
+                        activated_at: Time.zone.now)
+
+  title = Faker::Lorem.word
+  description = Faker::Lorem.sentences(4)
+  user.issues.create!(user_id: user.id,
+                      title: title,
+                      description: description,
+                      priority: "low")
 end
