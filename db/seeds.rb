@@ -6,28 +6,35 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create!(username: "Example User",
-            email: "admin@issuetrackerproject.com",
-            password: "foobar",
-            password_confirmation: "foobar",
-            activated: false,
-            activated_at: Time.zone.now,
-            admin: true)
+             email: "admin@issuetrackerproject.com",
+             password: "foobar",
+             password_confirmation: "foobar",
+             activated: true,
+             activated_at: Time.zone.now,
+             admin: true)
 
 4.times do |n|
   name = Faker::Name.name
   email = "user-#{n+1}@railstutorial.org"
   password = "password"
   user = User.create!(username: name,
-                        email: email,
-                        password: password,
-                        password_confirmation: password,
-                        activated: true,
-                        activated_at: Time.zone.now)
+                      email: email,
+                      password: password,
+                      password_confirmation: password,
+                      activated: false,
+                      activated_at: Time.zone.now)
 
-  title = Faker::Lorem.word
-  description = Faker::Lorem.paragraph(3)
-  user.issues.create!(user_id: user.id,
-                      title: title,
-                      description: description,
-                      priority: "low")
+  5.times do |i|
+    title = Faker::Lorem.word
+    description = Faker::Lorem.paragraph(3)
+    issue = user.issues.create!(user_id: user.id,
+                                title: title,
+                                description: description,
+                                priority: "low")
+    2.times do |c|
+      content = Faker::Lorem.paragraph(3, true)
+      issue.comments.create!(issue_id: issue.id,
+                             content: content )
+    end
+  end
 end

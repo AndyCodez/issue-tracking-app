@@ -24,8 +24,10 @@ class IssuesController < ApplicationController
     @issue_admin = Issue.find_by(id: params[:id])
     #To help build the comment form 
     @comment = Comment.new
-    #Returns all the comments associated with the current issue
+    #Returns all the comments associated with the current issue for admin
     @comments = @issue_admin.comments
+    #Returns all the comments associated with the current issue for current user
+    @comments = @issue.comments
   end
 
   def index
