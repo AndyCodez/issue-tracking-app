@@ -38,13 +38,16 @@ class IssuesController < ApplicationController
     user.send_issue_assigned_email
     issue = Issue.find_by(id: params[:id])
     issue.update_attribute(:status, "inprogress")
-    flash[:success] = "Issue changed to in progress!"
+    flash[:success] = "Issue status changed to in progress!"
     redirect_to issues_path
   end
 
   def change_status_to_resolved
+    user = User.find_by(id: params[:user_id])
+    user.send_issue_resolved_email
     issue = Issue.find_by(id: params[:id])
     issue.update_attribute(:status, "resolved")
+    flash[:success] = "Issue status changed to resolved!"
     redirect_to issues_path
   end
 

@@ -86,6 +86,10 @@ class User < ApplicationRecord
   def send_issue_assigned_email
     UserMailer.issue_assigned(self).deliver_now
   end
+
+  def send_issue_resolved_email
+    UserMailer.issue_resolved(self).deliver_now
+  end
   
   private
     

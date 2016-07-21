@@ -22,7 +22,12 @@ class UserMailer < ApplicationMailer
 
   def issue_assigned(user)
     @user = user
-    mail to: user.email, subject: "Your Issue has been Assigned"
+    mail to: user.email, subject: "Issue Assigned"
+  end
+
+  def issue_resolved(user)
+    @user = user
+    mail to: user.email, subject: "Issue Resolved"
   end
 
   def issue_raised(user)
