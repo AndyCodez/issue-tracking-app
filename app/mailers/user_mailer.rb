@@ -48,7 +48,7 @@ class UserMailer < ApplicationMailer
   def issue_raised(user)
     #The user that raised the issue
     @user = user
-    mail to: 'admin@issuetrackerproject.com', subject: "Issue Raised"
+    mail to: 'andrewhenry08@gmail.com', subject: "Issue Raised"
   end
 
 end
