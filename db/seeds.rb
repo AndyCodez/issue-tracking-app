@@ -25,7 +25,7 @@ User.create!(username: "Example User",
                         activated_at: Time.zone.now)
 
   title = Faker::Lorem.word
-  description = Faker::Lorem.sentences(4)
+  description = Faker::Lorem.paragraph(3)
   user.issues.create!(user_id: user.id,
                       title: title,
                       description: description,
