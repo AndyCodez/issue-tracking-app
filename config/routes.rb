@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get 'mark_in_progress' => 'issues#change_status_to_in_progress'
   get 'mark_resolved' => 'issues#change_status_to_resolved'
   get 'mark_closed' => 'issues#change_status_to_closed'
-
+  
   resources :users
   resources :account_activations, only: [:new, :edit, :create]
   resources :password_resets, only: [:new, :create, :edit, :update]

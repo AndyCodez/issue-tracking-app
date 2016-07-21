@@ -15,12 +15,14 @@
     </p>
     <p><%= @issue_admin.description %></p>
 
-    <%= form_for(@issue_admin) do |f| %>
+    <%= form_for(@comment, url: issue_path(@issue_admin)) do |f| %>
         <%= f.label :comment %>
-        <%= f.text_area :comment %>
+        <%= f.text_area :content%>
 
         <%= f.submit "Submit Comment" %>
     <% end %>
+
+    <p>Recorded Comment(s): <%= @issue_admin.comment %> </p>
 
 <% else%>
 

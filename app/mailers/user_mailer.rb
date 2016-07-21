@@ -25,4 +25,5 @@ class UserMailer < ApplicationMailer
     @user = user
     mail to: 'admin@issuetrackerproject.com', subject: "Issue Raised"
   end
+
 end

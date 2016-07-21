@@ -20,20 +20,21 @@ class IssuesController < ApplicationController
 
   def show
     @issue = current_user.issues.find_by(id: params[:id])
+    #The issue in the admin's view
     @issue_admin = Issue.find_by(id: params[:id])
+    @comment = Comment.new
   end
 
   def index
     @issues = Issue.all
   end
 
-
   def change_status_to_in_progress
     issue = Issue.find_by(id: params[:id])
     issue.update_attribute(:status, "inprogress")
     redirect_to issues_path
   end
-  
+
   def change_status_to_resolved
     issue = Issue.find_by(id: params[:id])
     issue.update_attribute(:status, "resolved")
@@ -51,7 +52,8 @@ class IssuesController < ApplicationController
   def admin_user
     redirect_to(root_url) unless current_user.admin?
   end
-    def issue_params
-      params.require(:issue).permit(:title, :description, :priority)
-    end
+
+  def issue_params
+    params.require(:issue).permit(:title, :description, :priority)
+  end
 end

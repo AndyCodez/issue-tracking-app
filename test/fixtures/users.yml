@@ -3,6 +3,7 @@ makatunga:
     email: makatunga@example.com
     password_digest: <%= User.digest('password') %>
     activated: true
+    created_at: <%= Time.zone.now %>
     activated_at: <%= Time.zone.now %>
     activation_sent_at: <%= Time.zone.now %>
 
