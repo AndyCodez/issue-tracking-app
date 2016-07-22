@@ -14,6 +14,11 @@ class CommentsController < ApplicationController
     end
   end
 
+  def index
+    @issue = current_user.issues.find_by(id: params[:id])
+    #Returns all the comments associated with the current issue for current user
+    @comments = @issue.comments
+  end
   private
     def comment_params
       params.require(:comment).permit(:content)

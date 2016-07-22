@@ -40,15 +40,15 @@
 <% else%>
 
     <h2><%= @issue.title %></h2>
-    <h4>Status: <%= @issue_admin.status %> </h4>
+    <h4>Status: <%= @issue.status %> </h4>
     <p>Posted <%= time_ago_in_words(@issue.created_at) %> ago.</p>
     <p>Description:</p>
     <p><%= @issue.description %></p>
     <p>Comments:</p>
     <p>
-        <%# <% @comments.each do |comment| %1> %>
-        <%#     <p><%= comment.content %1></p> %>
-        <%# <% end %1> %>
+        <% @comments.each do |comment| %>
+            <p><%= comment.content %></p>
+        <% end %>
     </p>
 
 <% end %>
