@@ -25,9 +25,9 @@ class IssuesController < ApplicationController
     #To help build the comment form 
     @comment = Comment.new
     #Returns all the comments associated with the current issue for admin
-    @comments = @issue_admin.comments
+    @comments_admin = @issue_admin.comments
     #Returns all the comments associated with the current issue for current user
-    @comments = @issue.comments
+    # @comments = @issue.comments
   end
 
   def index
