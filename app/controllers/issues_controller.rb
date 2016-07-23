@@ -27,7 +27,9 @@ class IssuesController < ApplicationController
     #Returns all the comments associated with the current issue for admin's view
     @comments_admin = @issue_admin.comments
     else
+    #The issue for the current user's view
     @issue = current_user.issues.find_by(id: params[:id])
+    #Returns all the comments associated with the current issue for user's view
     @comments = @issue.comments
     end
   end
