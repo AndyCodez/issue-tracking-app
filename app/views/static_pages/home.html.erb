@@ -1,3 +1,12 @@
-<h1>Welcome to Issue Tracker!</h1>
-<p><%= link_to 'Sign Up', signup_path %></p>
-<p><%= link_to 'Log In', login_path %></p>
+<div class="home-content">
+    <h1>Welcome to Issue Tracker!</h1>
+
+<% if !logged_in? %>
+    <ul>
+        <li><span class="button signup"><%= link_to 'Sign Up', signup_path %></span></li>
+        <li><span class="button login"><%= link_to 'Log In', login_path %></span></li>
+    </ul>
+<% else %>
+    <span class="button"><%= link_to "USE APP", new_issue_path  %></span>
+<% end %>
+</div>
