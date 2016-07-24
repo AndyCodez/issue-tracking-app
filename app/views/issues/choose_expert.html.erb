@@ -1,0 +1,17 @@
+<h3>Choose Expert to Assign Issue: <br/><%= @issue.title%> </h3>
+<table>
+    <thead>
+        <th>Expert Name</th>
+        <th>Task</th>
+    </thead>
+    <tbody>
+        <% @users.each do |user| %>
+            <tr><td><%= user.username %></td>
+                <td class="button"><%= link_to "Assign Issue", 
+                    mark_in_progress_path(id: @issue.id, user_id: @issue.user_id, 
+                                          expert_id: user.id) %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+

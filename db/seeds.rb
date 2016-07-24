@@ -22,7 +22,8 @@ User.create!(username: "Admin Andy",
                       password: password,
                       password_confirmation: password,
                       activated: false,
-                      activated_at: Time.zone.now)
+                      activated_at: Time.zone.now,
+                      expert: true)
 
   5.times do |i|
     title = Faker::Lorem.word

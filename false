@@ -1,0 +1,2 @@
+      invoke  active_record
+      remove    db/migrate/20160724181557_add_expert_to_users.rb

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160721130225) do
+ActiveRecord::Schema.define(version: 20160724201736) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20160721130225) do
     t.integer  "priority",    default: 0
     t.string   "title"
     t.integer  "status",      default: 0
+    t.integer  "expert_id",   default: 0
     t.index ["user_id", "created_at"], name: "index_issues_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_issues_on_user_id"
   end
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 20160721130225) do
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
     t.boolean  "admin",              default: false
+    t.boolean  "expert",             default: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

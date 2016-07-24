@@ -8,8 +8,10 @@
             mark_open_path(id: @issue_admin.id, user_id: @issue_admin.user_id)%> |
     </span>
     <span class="assign">
+        <%# <%= link_to "Assign Issue", %> 
+        <%#     mark_in_progress_path(id: @issue_admin.id, user_id: @issue_admin.user_id) %1> | %>
         <%= link_to "Assign Issue", 
-            mark_in_progress_path(id: @issue_admin.id, user_id: @issue_admin.user_id) %> |
+                choose_expert_path(id: @issue_admin.id, user_id: @issue_admin.user_id)%>
     </span>
     <span class="resolved">
         <%= link_to "Resolved Issue", 

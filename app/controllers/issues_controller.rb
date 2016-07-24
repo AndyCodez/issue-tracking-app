@@ -47,13 +47,19 @@ class IssuesController < ApplicationController
     redirect_to issues_path
   end
 
+  def choose_expert
+    @users = User.where(expert: true)
+    @issue = Issue.find_by(id: params[:id])
+  end
+
   #Executes when issue is assigned
   def change_status_to_in_progress
     user = User.find_by(id: params[:user_id])
     user.send_issue_assigned_email
     issue = Issue.find_by(id: params[:id])
-    issue.update_attribute(:status, "inprogress")
-    flash[:success] = "Issue status changed to in progress!"
+    expert = User.find_by(id: params[:expert_id])
+    issue.update_attributes(status: "inprogress", expert_id: expert.id)
+    flash[:success] = "Issue status changed to in progress! Assigned to #{expert.username}"
     redirect_to issues_path
   end
 
