@@ -13,3 +13,30 @@
 .error_messages{
     color: red;
 }
+
+/* statuses */
+
+.status-closed {
+    background: red;
+    padding: 5px;
+    border-radius: 10%;
+}
+
+.status-resolved {
+    background: green;
+    padding: 5px;
+    border-radius: 10%;
+}
+
+.status-inprogress {
+    background: #F0AD4E;
+    padding: 5px;
+    border-radius: 10%;
+}
+
+.status-open {
+    background: #0074C9;
+    padding: 5px;
+    border-radius: 10%;
+}
+

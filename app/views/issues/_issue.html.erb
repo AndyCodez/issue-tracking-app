@@ -12,7 +12,7 @@
         <tr>
             <td><%= link_to each_issue.title, show_issue_path(id: each_issue.id)  %></td>
             <td><%= each_issue.priority %></td>
-            <td><%= each_issue.status %></td>
+            <td><span class="status-<%= each_issue.status %>"><%= each_issue.status %></span></td>
             <td>
                 <% if each_issue.expert_id > 0 %>
                     <% @expert = User.find_by(id: each_issue.expert_id)%>
