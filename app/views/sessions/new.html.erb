@@ -3,12 +3,12 @@
 <%= form_for(:session, url: login_path) do |f| %>
     <%= f.text_field :username, placeholder: "USERNAME" %><br>
 
+    <%= link_to "(Forgot Password)", new_password_reset_path %>
     <%= f.password_field :password, placeholder: "PASSWORD" %><br>
 
     <%= f.label :remember_me do %>
         <%= f.check_box :remember_me %>
         <span>Remember me on this computer</span>
     <% end %>
-    <%= f.submit "LOG IN"%>
-    <%= link_to "(Forgot Password)", new_password_reset_path %>
+    <%= f.submit "LOG IN"%> <%= link_to "New User? Sign UP!", signup_path %>
 <% end%>

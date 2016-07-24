@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
         #Allow access
         log_in user
         params[:session][:remember_me] == '1' ? remember(user) : forget(user) 
-        redirect_to new_issue_path
+        redirect_to user
       end
     else
       flash.now[:alert] = "Invalid username/password combination"
