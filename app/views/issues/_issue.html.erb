@@ -5,6 +5,7 @@
             <th>Issue Title</th>
             <th>Priority</th>
             <th>Status</th>
+            <th>Assigned Expert</th>
         </thead>
         <tbody>
     <% @issues.each do |each_issue| %>
@@ -12,6 +13,14 @@
             <td><%= link_to each_issue.title, show_issue_path(id: each_issue.id)  %></td>
             <td><%= each_issue.priority %></td>
             <td><%= each_issue.status %></td>
+            <td>
+                <% if each_issue.expert_id > 0 %>
+                    <% @expert = User.find_by(id: each_issue.expert_id)%>
+                    <%= @expert.username %>
+                <% else %>
+                    UNASSIGNED
+                <% end %>
+            </td>
         </tr>
     <% end %>
 
