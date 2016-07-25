@@ -12,7 +12,17 @@
         <tr>
             <td><%= link_to each_issue.title, show_issue_path(id: each_issue.id)  %></td>
             <td><%= each_issue.priority %></td>
-            <td><span class="status-<%= each_issue.status %>"><%= each_issue.status %></span></td>
+            <td>
+                <% if each_issue.status == "resolved" %>
+                    <span class="success label"><%= each_issue.status %></span>
+                <% elsif each_issue.status == "closed" %>
+                    <span class="alert label"><%= each_issue.status %></span>
+                <% elsif each_issue.status == "inprogress" %>
+                    <span class="secondary label"><%= each_issue.status %></span>
+                <% else %>
+                    <span class="warning label"><%= each_issue.status %></span>
+                <% end %>
+            </td>
             <td>
                 <% if each_issue.expert_id > 0 %>
                     <% @expert = User.find_by(id: each_issue.expert_id)%>
