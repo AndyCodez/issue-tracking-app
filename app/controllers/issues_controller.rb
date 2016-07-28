@@ -1,5 +1,5 @@
 class IssuesController < ApplicationController
-  before_action :admin_user, only: [:change_status_to_in_progress, :change_status_to_resolved, 
+  before_action :admin_user, only: [:index, :change_status_to_in_progress, :change_status_to_resolved, 
                                     :change_status_to_closed]
 
   def new
