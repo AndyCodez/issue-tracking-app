@@ -1,6 +1,3 @@
-include Recaptcha::Verify
-include Recaptcha::ClientHelper
-
 class UsersController < ApplicationController
   
   def new
@@ -9,7 +6,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if verify_recaptcha(model: @user) && @user.save
+    if @user.save
       @user.send_activation_email
       log_in @user
       #note to self: change flash to info and blue later 
