@@ -1,8 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 shida:
+    id: 1
+    user_id: 2
+    title: "Kichwa"
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat."
     created_at: <%= 7.minutes.ago %>
+
 matatizo:
     description: "Matatizo kweli. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat."
     created_at: <%= 3.days.ago %>

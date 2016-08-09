@@ -1,6 +1,6 @@
 <% if current_user.admin? %>
 
-    <h2> <%= @issue_admin.title %></h2>
+    <h2><%= @issue_admin.title %></h2>
     <h4>Status: <%= @issue_admin.status %> </h4>
     <p>Posted <%= time_ago_in_words(@issue_admin.created_at) %> ago.
     <span class="open">

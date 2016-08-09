@@ -1,3 +1,13 @@
+andy:
+    username: Andy
+    email: andy@example.com
+    password_digest: <%= User.digest('password') %>
+    activated: true
+    created_at: <%= Time.zone.now %>
+    activated_at: <%= Time.zone.now %>
+    activation_sent_at: <%= Time.zone.now %>
+    admin: true
+
 makatunga:
     username: Makatunga
     email: makatunga@example.com
@@ -8,6 +18,7 @@ makatunga:
     activation_sent_at: <%= Time.zone.now %>
 
 archer:
+    id: 2
     username: Sterling Archer
     email: duchess@example.gov    
     password_digest: <%= User.digest('password') %>
