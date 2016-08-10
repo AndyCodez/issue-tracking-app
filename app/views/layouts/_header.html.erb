@@ -11,7 +11,7 @@
 
                 <% if !@current_user.activated? %>
                     <li><%= link_to 'RENEW ACTIVATION LINK', new_account_activation_path(@current_user) %></li>
-                <% end %>
+                <% else %>
 
                 <% if @current_user.admin? %>
                     <li><%= link_to 'ISSUES', issues_path %></li>
@@ -20,6 +20,7 @@
                 <% end %>
                 <li><%= link_to 'PROFILE', current_user %></li>
                 <li><%= link_to 'LOGOUT', logout_path, method: :delete %></li>
+                <% end %>
             <% end %>
         </ul>
     </div>

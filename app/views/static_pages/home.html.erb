@@ -7,6 +7,12 @@
         <li><span class="button login"><%= link_to 'Log In', login_path %></span></li>
     </ul>
 <% else %>
-    <span class="button"><%= link_to "USE APP", new_issue_path  %></span>
+	<% if !@current_user.activated? %>
+			<span class="button">
+				<%= link_to 'RENEW ACTIVATION LINK', new_account_activation_path(@current_user) %>
+				</span>
+	<% else %>
+    	<span class="button"><%= link_to "USE APP", new_issue_path  %></span>
+    <% end %>
 <% end %>
 </div>
