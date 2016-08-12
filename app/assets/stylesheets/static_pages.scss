@@ -24,6 +24,9 @@
     margin-right: 100px;
     margin-top: 50px;
 }
+.home-content a {
+    color: #000;
+}
 
 .home-content .button:hover {
     background: red;
@@ -31,4 +34,10 @@
 
 .button a {
      color: #000;
+}
+
+#signup_label, #login_label {
+     padding: 15px;
+     margin: 15px;
+     width: 100px;
 }

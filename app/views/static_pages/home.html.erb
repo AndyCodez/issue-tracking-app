@@ -3,8 +3,8 @@
 
 <% if !logged_in? %>
     <ul>
-        <li><span class="button signup"><%= link_to 'Sign Up', signup_path %></span></li>
-        <li><span class="button login"><%= link_to 'Log In', login_path %></span></li>
+        <li><span class="label" id="signup_label"><%= link_to 'Sign Up', signup_path %></span></li>
+        <li><span class="label" id="login_label"><%= link_to 'Log In', login_path %></span></li>
     </ul>
 <% else %>
 	<% if !@current_user.activated? %>
