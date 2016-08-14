@@ -1,7 +1,7 @@
 class IssuesController < ApplicationController
   before_action :admin_user, only: [:index, :change_status_to_in_progress, :change_status_to_resolved, 
                                     :change_status_to_closed]
-
+  
   def new
     @issue = Issue.new
   end
@@ -84,7 +84,6 @@ class IssuesController < ApplicationController
   end
 
   private
-
   def admin_user
     redirect_to(root_url) unless current_user.admin?
   end
