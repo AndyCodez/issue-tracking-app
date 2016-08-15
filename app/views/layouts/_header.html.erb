@@ -10,7 +10,7 @@
             <% if logged_in? %>
 
                 <% if !@current_user.activated? %>
-                    <li><%= link_to 'RENEW ACTIVATION LINK', new_account_activation_path(@current_user) %></li>
+                    <%# <li><%= link_to 'RENEW ACTIVATION LINK', new_account_activation_path(@current_user) %1></li> %>
                 <% else %>
 
                 <% if @current_user.admin? %>
