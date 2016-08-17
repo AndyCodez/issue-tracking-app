@@ -56,8 +56,26 @@ footer{
         padding: 1rem;
         margin-left: 10px;
     }
+
+    #login {
+        border: 1px solid #FCFCFC;
+        padding: 9px 0px 9px 0px; /*top, right, bottom ,left*/
+        margin-left: 10px;
+        a {
+            border: 1px solid #FCFCFC;
+            padding: 10px 20px 10px 20px; /*top, right, bottom ,left*/
+            &:hover {
+                border: 1px solid black;
+                background: #FCFCFC;
+            }
+        }
+    }
 }
 
 .menu-text{
     font-size: 1.5em;
+}
+.container {
+    margin-left: 50px;
+    margin-right: 50px;
 }

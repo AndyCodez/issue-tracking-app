@@ -7,6 +7,9 @@
             <li><%= link_to 'HOME', root_path %></li>
             <li><%= link_to 'ABOUT', about_path %></li>
             <li><%= link_to 'HELP', help_path %></li>
+            <% if !logged_in? %>
+                <li><div id="login"><%= link_to "LOG IN", login_path%></div></li>
+            <% end %>
             <% if logged_in? %>
 
                 <% if !@current_user.activated? %>
