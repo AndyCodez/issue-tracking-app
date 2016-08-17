@@ -24,3 +24,40 @@ footer{
     padding: 150px;
 }
 
+.top-bar{
+    li {
+        list-style: none;
+    }
+    .top-bar-left {
+        a {
+            color: #fff;
+        }
+    }
+    .top-bar-right {
+        a {
+            margin-top: 5px;
+            &:hover {
+                border-bottom: 3px solid #3ADB76;
+            }
+            &:focus {
+                border-bottom: 3px solid red;
+            }
+
+        }
+    }
+    #logout {
+        a{
+            border: none;
+            padding: 1rem 1.5rem;
+            color: #fff;
+        }
+    }
+    .label {
+        padding: 1rem;
+        margin-left: 10px;
+    }
+}
+
+.menu-text{
+    font-size: 1.5em;
+}

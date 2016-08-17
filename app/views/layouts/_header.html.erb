@@ -1,6 +1,6 @@
 <div class="top-bar">
     <div class="top-bar-left">
-            <li class="menu-text">Issue Tracker</li>
+        <li class="menu-text"><%= link_to "Issue Tracker", root_url %></li>
     </div>
     <div class="top-bar-right">
         <ul class="menu">
@@ -19,7 +19,7 @@
                         <li><%= link_to 'RAISE ISSUE', new_issue_path %></li>
                 <% end %>
                 <li><%= link_to 'PROFILE', current_user %></li>
-                <li><%= link_to 'LOGOUT', logout_path, method: :delete %></li>
+                <li id="logout"><span class="alert label"><%= link_to 'LOGOUT', logout_path, method: :delete %></span></li>
                 <% end %>
             <% end %>
         </ul>
