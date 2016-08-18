@@ -8,6 +8,8 @@ gem 'rails', '~> 5.0.0'
 gem 'faker'
 #Style with foundation
 gem 'foundation-rails'
+#Use font-awesome icons
+gem "font-awesome-rails"
 
 gem 'dotenv-rails', :require => 'dotenv/rails-now'
 gem "recaptcha", require: "recaptcha/rails", github: "ambethia/recaptcha"
