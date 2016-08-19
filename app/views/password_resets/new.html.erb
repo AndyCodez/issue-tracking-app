@@ -1,10 +1,11 @@
-<h1>Forgot Password</h1>
-<p>Don't worry, we've got you covered!</p>
+<div class="reset_form">
+    <h1>Forgot Password</h1>
+    <p>Don't worry, we've got you covered!</p>
 
-<%= form_for(:password_reset, url: password_resets_path) do |f| %>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
+    <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+        <%= f.label :email %>
+        <%= f.email_field :email %>
 
-    <%= f.submit %>
-<% end %>
-
+        <%= f.submit "RESET", class: "submit-button" %>
+    <% end %>
+</div>
