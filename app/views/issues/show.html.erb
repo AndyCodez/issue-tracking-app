@@ -1,56 +1,58 @@
-<% if current_user.admin? %>
+<div class="container">
+    <% if current_user.admin? %>
 
-    <h2><%= @issue_admin.title %></h2>
-    <h4>Status: <%= @issue_admin.status %> </h4>
-    <p>Posted <%= time_ago_in_words(@issue_admin.created_at) %> ago.
-    <span class="open">
-        <%= link_to "Reopen Issue", 
-            mark_open_path(id: @issue_admin.id, user_id: @issue_admin.user_id)%> |
+        <h2><%= @issue_admin.title %></h2>
+        <h4>Status: <%= @issue_admin.status %> </h4>
+        <p>Posted <%= time_ago_in_words(@issue_admin.created_at) %> ago.
+        <span class="open">
+            <%= link_to "Reopen Issue", 
+                mark_open_path(id: @issue_admin.id, user_id: @issue_admin.user_id)%> |
+        </span>
+        <span class="assign">
+            <%# <%= link_to "Assign Issue", %> 
+            <%#     mark_in_progress_path(id: @issue_admin.id, user_id: @issue_admin.user_id) %1> | %>
+            <%= link_to "Assign Issue", 
+            choose_expert_path(id: @issue_admin.id, user_id: @issue_admin.user_id)%> |
+        </span>
+        <span class="resolved">
+            <%= link_to "Resolved Issue", 
+                mark_resolved_path(id: @issue_admin.id, user_id: @issue_admin.user_id) %> |
+        </span>
+        <span class="closed">
+            <%= link_to "Close Issue", 
+                mark_closed_path(id: @issue_admin.id, user_id: @issue_admin.user_id) %>
     </span>
-    <span class="assign">
-        <%# <%= link_to "Assign Issue", %> 
-        <%#     mark_in_progress_path(id: @issue_admin.id, user_id: @issue_admin.user_id) %1> | %>
-        <%= link_to "Assign Issue", 
-                choose_expert_path(id: @issue_admin.id, user_id: @issue_admin.user_id)%> |
-    </span>
-    <span class="resolved">
-        <%= link_to "Resolved Issue", 
-            mark_resolved_path(id: @issue_admin.id, user_id: @issue_admin.user_id) %> |
-    </span>
-    <span class="closed">
-        <%= link_to "Close Issue", 
-            mark_closed_path(id: @issue_admin.id, user_id: @issue_admin.user_id) %>
-    </span>
-    </p>
-    <p><%= @issue_admin.description %></p>
+        </p>
+        <p><%= @issue_admin.description %></p>
 
-    <%= form_for(@comment, url: comments_path(id: @issue_admin.id, user_id: @issue_admin.user_id)) do |f| %>
-        <%= f.label :comment %>
-        <%= f.text_area :content %>
+        <%= form_for(@comment, url: comments_path(id: @issue_admin.id, user_id: @issue_admin.user_id)) do |f| %>
+            <%= f.label :comment %>
+            <%= f.text_area :content %>
 
-        <%= f.submit "Submit Comment" %>
-    <% end %>
+            <%= f.submit "Submit Comment" %>
+        <% end %>
 
-    <br/>
-    <p>
+        <br/>
+        <p>
         Recorded Comment(s):
         <% @comments_admin.each do |comment| %>
             <p><%= comment.content %></p>
         <% end %>
-    </p>
+        </p>
 
-<% else%>
+    <% else%>
 
-    <h2><%= @issue.title %></h2>
-    <h4>Status: <%= @issue.status %> </h4>
-    <p>Posted <%= time_ago_in_words(@issue.created_at) %> ago.</p>
-    <p>Description:</p>
-    <p><%= @issue.description %></p>
-    <p>Comments:</p>
-    <p>
+        <h2><%= @issue.title %></h2>
+        <h4>Status: <%= @issue.status %> </h4>
+        <p>Posted <%= time_ago_in_words(@issue.created_at) %> ago.</p>
+        <p>Description:</p>
+        <p><%= @issue.description %></p>
+        <p>Comments:</p>
+        <p>
         <% @comments.each do |comment| %>
             <p><%= comment.content %></p>
         <% end %>
-    </p>
+        </p>
 
-<% end %>
+    <% end %>
+</div>

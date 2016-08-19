@@ -9,7 +9,7 @@ html, body {
 
 }
 
-.signup_form, .login_form, .reset_form, .new-issue{
+.signup_form, .login_form, .reset_form, .new-issue, .profile{
     margin: auto;
     padding: 50px;
     width: 50%;
@@ -28,7 +28,7 @@ html, body {
         background-color: #273241;
     }
 }
-#signup_button, #login_button {
+#signup_button, #login_button, #renew_activation_button, #use_app_button {
     background-color: #273241;
     color: #fff;
     &:hover {
@@ -128,6 +128,7 @@ html, body {
 
 }
 footer{
+    color: #fff;
     background: #4A5460;
     text-align: center;
     border-top: 1px solid black;

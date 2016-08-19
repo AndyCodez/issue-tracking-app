@@ -8,11 +8,9 @@
     </ul>
 <% else %>
 	<% if !@current_user.activated? %>
-			<span class="button">
-				<%= link_to 'RENEW ACTIVATION LINK', new_account_activation_path(@current_user) %>
-				</span>
+				<%= link_to 'RENEW ACTIVATION LINK', new_account_activation_path(@current_user), class: "submit-button", id: "renew_activation_button" %>
 	<% else %>
-    	<span class="button"><%= link_to "USE APP", new_issue_path  %></span>
+    	<%= link_to "USE APP", new_issue_path, class: "submit-button", id: "use_app_button"  %>
     <% end %>
 <% end %>
 </div>
