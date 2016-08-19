@@ -14,9 +14,9 @@ This app allows for a user to sign up and raise issues. An admin assigns the iss
 ##Test-Use the App
 ###As an Admin
 Sign in using the following details<br />
-username: Makatunga
+username: Makatunga<br />
 password: foobar
 ###As a User
-You can sign up using an email that you control. I, however, advice using a temporary email to avoid being spammed by other people who log in to the app as an admin.
-*_Note:_ The user is automatically emailed every time their issue status changes.
+You can sign up using an email that you control. I, however, advice using a temporary email to avoid being spammed by other people who log in to the app as an admin.<br />
+*Note:* The user is automatically emailed every time their issue status changes.<br />
 More info on the functioning of the app is availed on the "help" page.
