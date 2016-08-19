@@ -13,7 +13,7 @@ This app allows for a user to sign up and raise issues. An admin assigns the iss
 
 ##Test-Use the App
 ###As an Admin
-Sign in using the following details
+Sign in using the following details<br />
 username: Makatunga
 password: foobar
 ###As a User
