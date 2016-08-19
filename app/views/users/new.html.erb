@@ -1,29 +1,23 @@
-<div class="row">
-    <div class="large-3 columns"><!-- ... --></div>
-    <div class="large-6 columns">
-        <div class="signup_form">
+<div class="signup_form">
 
-            <h1>Sign Up</h1>
-            <%= form_for(@user) do |f|%>
-                <%= render 'shared/error_messages' %>
-                <%= f.label :username %>
-                <%= f.text_field :username %><br>
+    <h1>Sign Up</h1>
+    <%= form_for(@user) do |f|%>
+        <%= render 'shared/error_messages' %>
+        <%= f.label :username %>
+        <%= f.text_field :username %><br>
 
-                <%= f.label :email %>
-                <%= f.email_field :email %><br>
+        <%= f.label :email %>
+        <%= f.email_field :email %><br>
 
-                <%= f.label :password %>
-                <%= f.password_field :password%><br>
+        <%= f.label :password %>
+        <%= f.password_field :password%><br>
 
-                <%= f.label :password_confirmation %>
-                <%= f.password_field :password_confirmation %><br>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %><br>
 
-                <%# <%= recaptcha_tags %1> %>
+        <%# <%= recaptcha_tags %1> %>
 
-                <%= f.submit "SIGN UP"%> <%= link_to "Already have an account? Log In", login_path %>
-            <% end %>
+        <%= f.submit "SIGN UP"%> <%= link_to "Already have an account? Log In", login_path %>
+    <% end %>
 
-        </div>
-    </div>
-    <div class="large-3 columns"><!-- ... --></div>
 </div>
