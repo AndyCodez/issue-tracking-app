@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>  
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>  
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Issue Tracker" %></title>
+        <title><%= content_for?(:title) ? yield(:title) : "Issue Tracker" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
+        <%= stylesheet_link_tag    "application" %>
+        <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+    </head>
 
-  <body>
-      <%= render 'layouts/header' %>
-          <% flash.each do |name, msg| %>
-              <!-- <div class="#{name}"> msg </div> -->
-              <%= content_tag :div, msg, class: name %>
-          <% end %>
-          <%= yield %>
-          <%= render 'layouts/footer'%>
-  </body>
+    <body>
+        <%= render 'layouts/header' %>
+        <div class="wrapper">
+            <% flash.each do |name, msg| %>
+                <!-- <div class="#{name}"> msg </div> -->
+                <%= content_tag :div, msg, class: name %>
+            <% end %>
+            <%= yield %>
+            <div class="push"></div>
+        </div>
+        <%= render 'layouts/footer'%>
+    </body>
 </html>

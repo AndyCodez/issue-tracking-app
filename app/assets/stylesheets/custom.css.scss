@@ -1,3 +1,11 @@
+* {
+    margin: 0;
+
+}
+html, body {
+    height: 100%;
+
+}
 .success {
     background: green;
     padding: 20px;
@@ -13,19 +21,7 @@
 .error_messages{
     color: red;
 }
-footer{
-    background: #4A5460;
-    text-align: center;
-    border-top: 1px solid black;
-    p{
-        margin-top: 20px;
-        margin-bottom: 0px;
-        padding: 0px 20px 20px 20px;
-    }
-    .github-link {
-        margin-left: 5px;
-    }
-}
+
 .padding-150 {
     padding: 150px;
 }
@@ -84,4 +80,30 @@ footer{
 .container {
     margin-left: 50px;
     margin-right: 50px;
+}
+
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -4em;
+
+}
+.footer, .push {
+    height: 4em;
+
+}
+footer{
+    background: #4A5460;
+    text-align: center;
+    border-top: 1px solid black;
+    p{
+        margin-top: 20px;
+        margin-bottom: 0px;
+        padding: 0px 20px 20px 20px;
+    }
+    .github-link {
+        margin-left: 5px;
+    }
 }
