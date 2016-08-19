@@ -1,15 +1,17 @@
 <%= provide(:title, "Raise Issue") %>
-<h3>Raise Issue</h3>
-<%= form_for(@issue) do |f| %>
+<div class="new-issue">
+    <h1>Raise Issue</h1>
+    <%= form_for(@issue) do |f| %>
 
-    <%= f.label :issue_title %>
-    <%= f.text_field :title %>
+        <%= f.label :issue_title %>
+        <%= f.text_field :title %>
 
-    <%= f.label "Issue Description" %>
-    <%= f.text_area :description, placeholder: "Minimum 50 characters" %>
+        <%= f.label "Issue Description" %>
+        <%= f.text_area :description, placeholder: "Minimum 50 characters", class: "description" %>
 
-    <%= f.label :priority, "Priority [Low, Medium or High]" %>
-    <%= f.text_field :priority %>
+        <%= f.label :priority, "Priority [Low, Medium or High]" %>
+        <%= f.text_field :priority %>
 
-    <%= f.submit "Raise Issue"%>
-<% end %>
+        <%= f.submit "Raise Issue", class: "submit-button"%>
+    <% end %>
+</div>

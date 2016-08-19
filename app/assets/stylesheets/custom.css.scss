@@ -9,7 +9,7 @@ html, body {
 
 }
 
-.signup_form, .login_form, .reset_form{
+.signup_form, .login_form, .reset_form, .new-issue{
     margin: auto;
     padding: 50px;
     width: 50%;
@@ -34,6 +34,9 @@ html, body {
     &:hover {
         background-color: #2199E8;
     }
+}
+.description {
+     height: 148px;
 }
 .success {
     background: green;
