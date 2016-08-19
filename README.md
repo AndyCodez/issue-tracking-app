@@ -10,3 +10,13 @@ This app allows for a user to sign up and raise issues. An admin assigns the iss
 4. Commit your changes (git commit -m "add new feature).
 5. Push to the branch(git push origin new-feature).
 6. Create a new Pull Request
+
+##Test-Use the App
+###As an Admin
+Sign in using the following details
+username: Makatunga
+password: foobar
+###As a User
+You can sign up using an email that you control. I, however, advice using a temporary email to avoid being spammed by other people who log in to the app as an admin.
+*_Note:_ The user is automatically emailed every time their issue status changes.
+More info on the functioning of the app is availed on the "help" page.
